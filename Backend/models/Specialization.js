@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
-const Specialization = sequelize.define('Specialization', {
+const Specialization = sequelize.define('specialization', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -14,7 +14,7 @@ const Specialization = sequelize.define('Specialization', {
   }
 }, {
   timestamps: false,
-  tableName: 'specializations'
+  
 });
 
 module.exports = Specialization;

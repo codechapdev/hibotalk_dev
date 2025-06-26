@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
-const Token = sequelize.define('Token', {
+const Token = sequelize.define('tokens', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

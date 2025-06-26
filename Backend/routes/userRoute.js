@@ -5,7 +5,7 @@ const upload = require('../middlewares/upload');
 const router = express.Router();
 
 //auth routes
-router.post('/signup', signup)
+router.post('/signup',upload.single('profile_pic'), signup)
 router.post('/login', login)
 router.post('/switch-role/:id', authenticate, switchRole);
 router.post('/forgot-password', forgotPassword);

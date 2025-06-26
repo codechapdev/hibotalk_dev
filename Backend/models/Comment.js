@@ -4,7 +4,7 @@ const sequelize = require('../config/db');
 const User = require('./User');
 const Community = require('./Community');
 
-const Comment = sequelize.define('Comment', {
+const Comment = sequelize.define('comment', {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
   content: { type: DataTypes.TEXT, allowNull: false },
   userId: { type: DataTypes.INTEGER, allowNull: false },

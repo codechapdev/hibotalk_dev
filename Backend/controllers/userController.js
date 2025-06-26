@@ -23,10 +23,12 @@ const signup = async(req,res) => {
       virtual_id,
       id_no,
       id_proof,
-      profile_pic,
       user_type,
       language_id
     } = req.body;
+
+     const profile_pic = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : null;
+
 
     //check for fullname,email and pass
     if (!fullname) {
@@ -335,6 +337,7 @@ const uploadProfilePic = async(req,res) => {
      await user.save();
 
       res.status(200).json({
+      status:201,
       message: 'Profile picture uploaded successfully',
       profile_pic: profile_pic,
       url: `${req.protocol}://${req.get('host')}/uploads/profile/${profile_pic}`

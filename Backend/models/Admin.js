@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
-const Admin = sequelize.define('Admin', {
+const Admin = sequelize.define('admins', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

@@ -4,7 +4,7 @@ const sequelize = require('../config/db');
 const Specialization = require('./Specialization');
 const {User} = require('./User');
 
-const Resource = sequelize.define('Resource', {
+const Resource = sequelize.define('resources', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -22,7 +22,7 @@ const Resource = sequelize.define('Resource', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'Specializations',
+      model: 'specialization',
       key: 'id',
     },
   },
@@ -30,7 +30,7 @@ const Resource = sequelize.define('Resource', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'Users',
+      model: 'users',
       key: 'id'
     }
   },

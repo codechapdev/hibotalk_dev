@@ -5,7 +5,7 @@ const addCommunity = async (req, res) => {
   try {
     const mentorId = req.user.id;
     const { title, description } = req.body;
-    let thumbnailUrl = req.file ? `http://localhost:5000/uploads/community/${req.file.filename}` : null;
+    let thumbnailUrl = req.file ? `http://13.250.76.124:5000/uploads/community/${req.file.filename}` : null;
 
     const community = await Community.create({ mentorId, title, description, thumbnailUrl });
 
@@ -34,5 +34,7 @@ const getMentorCommunities = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+
 
 module.exports = { addCommunity,getMentorCommunities };

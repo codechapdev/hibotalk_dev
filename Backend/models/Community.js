@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 const {User} = require('./User'); 
 
-const Community = sequelize.define('Community', {
+const Community = sequelize.define('communities', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -32,7 +32,7 @@ const Community = sequelize.define('Community', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'Users',
+      model: 'users',
       key: 'id',
     },
   }

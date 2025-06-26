@@ -4,7 +4,7 @@ const sequelize = require('../config/db');
 
 const Language = require('./Language');
 
-const User = sequelize.define('User', {
+const User = sequelize.define('users', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -84,7 +84,7 @@ const User = sequelize.define('User', {
     type: DataTypes.INTEGER,
     allowNull: true,
     references: {
-    model: 'Languages',   // table name (not model name)
+    model: 'languages',
     key: 'id'
   }
   },
