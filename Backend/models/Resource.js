@@ -22,7 +22,7 @@ const Resource = sequelize.define('resources', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'specialization',
+      model: 'specializations',
       key: 'id',
     },
   },
